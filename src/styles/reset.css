@@ -5,3 +5,7 @@
   box-sizing: border-box;
   font-family: monospace;
 }
+
+ul {
+  list-style: none;
+}

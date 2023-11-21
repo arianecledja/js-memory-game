@@ -1,3 +1,7 @@
+:root {
+  font-size: 62.5%; 
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -7,13 +11,54 @@ body {
   user-select: none;
 }
 
+.choose-level {
+  position: absolute;
+  width: 45rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #FFE3F2;
+  border-radius: 16px;
+  text-transform: uppercase;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  z-index: 999;
+}
+
+.choose-level p {
+  margin: 1rem;
+  color: #FC1E8A;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+
+.choose-level ul {
+  width: 100%;
+}
+
+.choose-level ul li {
+  width: 90%;
+  padding: 1rem;
+  margin: 0.5rem auto;
+  background-color: #FC1E8A;
+  border-radius: 16px;
+  color: #fff;
+  text-align: center;
+  font-size: medium;
+  cursor: pointer;
+}
+
 .container {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 3rem;
   background: linear-gradient(
     325deg,
     #03001e 0%,
@@ -21,7 +66,9 @@ body {
     #ec38bc 70%,
     #fdeff9 100%
   );
-  padding: 40px 60px;
+  padding: 4rem 6rem;
+  max-width: 450rem;
+  visibility: hidden;
 }
 
 h2 {
@@ -32,7 +79,7 @@ h2 {
 }
 
 .reset {
-  padding: 15px 20px;
+  padding: 1.5rem 2rem;
   width: 100%;
   color: #000;
   background-color: #fff;
@@ -50,19 +97,20 @@ h2 {
 }
 
 .game {
-  width: 430px;
-  height: 430px;
+  width: 43rem;
+  max-width: 100%;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 1rem;
   transform-style: preserve-3d;
   perspective: 500px;
 }
 
 .item {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 10rem;
+  height: 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,4 +139,24 @@ h2 {
 .boxOpen::after,
 .boxMatch::after {
   transform: rotateY(180deg);
+}
+
+
+@media screen and (max-width: 485px) {
+  .choose-level {
+    max-width: 90%; 
+  }
+  .container {
+    max-width: 90%;
+    padding: 2rem 3rem;
+
+  }
+  .game {
+    justify-content: center;
+    align-items: center;
+  }
+  .item {
+    width: 8rem;
+    height: 8rem;
+  }
 }
